@@ -1,0 +1,10 @@
+name 'handler_demo'
+maintainer 'Galen Emery'
+maintainer_email 'galen@chef.io'
+license 'Apache 2.0'
+description 'Installs/Configures handler_demo'
+long_description 'Installs/Configures handler_demo'
+version '0.1.0'
+
+depends 'chef_handler'
+depends 'postfix'
