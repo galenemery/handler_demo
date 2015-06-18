@@ -18,6 +18,15 @@ module NcrDemo
     subject = "#{status} Chef run report from #{node.name}"
     report_string = ""
     
+    if ! run_status.success?
+      puts "Chef run failed"
+      #Alert Nagios that a run failed and have Nagios kick off the contra run
+      #chef-client -r "recipe[handler_demo::contra_web_2]"
+    else
+      puts "Chef run succeeded"
+    end
+      
+    
     # report on changed resources
     if ! run_status.updated_resources.empty?
       # get some info about all the changed resources!
